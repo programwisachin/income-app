@@ -1,0 +1,139 @@
+.home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(63deg, #113f67 50%, #38598b 50%);
+}
+
+#firstForm{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid #a2a8d3;
+    border-radius: 8px;
+    height: 71vh;
+    width: 32vw;
+    background-color: #a2a8d3;
+}
+.btnGroup{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+#secondForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid #a2a8d3;
+    border-radius: 8px;
+    height: 71vh;
+    width: 32vw;
+    background-color: #a2a8d3;
+}
+.innerFormField{
+	position:relative;
+	margin-bottom:25px;
+}
+.innerFormField label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+    font-weight: 600;
+	color:#113f67;	
+	transition: all 0.5s ease-in-out;
+}
+.innerFormField input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:160%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color: #113f67;
+}
+
+.innerFormField input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #113f67;	
+}
+
+.innerFormField input:focus ~ label,
+.innerFormField input:valid ~ label{
+    transform: translateY(-15px);
+	font-size:12px;	
+}
+
+.city{
+	font-size:16px;
+    font-weight: 600;
+	color:#113f67;	
+	transition: all 0.5s ease-in-out;
+}
+.radioLabel {
+    display: flex;
+    align-items: center;  
+    border-radius: 100px;
+    padding: 14px 16px;
+    margin: 10px 0;  
+    cursor: pointer;
+    transition: .3s;
+  }
+  
+  .radioLabel:hover,
+  .radioLabel:focus-within {
+    background: hsla(0, 0%, 80%, .14);
+  }
+  
+  .radioInput {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    z-index: -1;
+  }
+  
+  .radioDesign {
+    width: 22px;
+    height: 22px;
+    border-radius: 100px;  
+    background: linear-gradient(to right bottom, #113f67, #a2a8d3);
+    position: relative;
+  }
+  
+  .radioDesign::before {
+    content: '';  
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;  
+    background: hsl(0, 0%, 90%);
+    transform: scale(1.1);
+    transition: .3s;
+  }
+  
+  .radioInput:checked+.radioDesign::before {
+    transform: scale(0);
+  }
+  
+  .radioText {
+    color: hsl(0, 0%, 48%);
+    margin-left: 14px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;  
+    transition: .3s;
+  }
+  
+  .radioInput:checked~.radioText {
+    color: #113f67;
+  }
+
