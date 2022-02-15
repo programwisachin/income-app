@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
+import Modal from "./Modal";
 const Home = () => {
 	let history = useNavigate();
+    let AppHra = 0
+    let TaxInc = 0
 	useEffect(() => {
 		if (localStorage.getItem("token")) {
 			history("/");
@@ -19,6 +22,9 @@ const Home = () => {
 	});
 
 	const [isFirstForm, setIsFirstForm] = useState(true);
+    const [modal, setModal] = useState(false)
+    const [taxInc, setTaxInc] = useState(0)
+    const [appHra, setAppHra] = useState(0)
 	const firstFormOnChange = (e) => {
 		console.log(e.target.value);
 		setFirstFormCredentials({
@@ -35,7 +41,7 @@ const Home = () => {
 		}
 		console.log(firstFormcredentials);
 	};
-    
+
 	//
 	//
 	//
@@ -56,13 +62,24 @@ const Home = () => {
 	};
 
 	const secondFormSubmit = () => {
+		const { bas, lta, hra, fa} = firstFormcredentials;
 		const { inv, rent, city, med } = secondFormcredentials;
 		console.log(inv, rent, city, med);
 		if (inv && rent && city && med) {
             console.log(secondFormcredentials);
+            if(city === "metro"){
+                setAppHra( Math.min((bas*(50/100)),(rent-(bas*(10/100))), hra))
+            }
+            else{
+                setAppHra( Math.min((bas*(40/100)),(rent-(bas*(10/100))), hra))
+            }
+            setTaxInc((bas + lta + hra + fa) - appHra - inv - med)
+            setModal(true)
 		}
 	};
 
+    const { bas, lta, hra, fa} = firstFormcredentials;
+	const { inv, rent, city, med } = secondFormcredentials;
 	return (
 		<div className="home">
 			{/* first form */}
@@ -116,6 +133,17 @@ const Home = () => {
 						<label htmlFor="med">Mediclaim</label>
 					</div>
 					<button className="submit btn" onClick={secondFormSubmit}>Submit</button>
+                    {modal && <Modal trigger={modal} setModal={setModal}>
+                        <h4>Basic: {bas}</h4>
+                        <h4>LTA: {lta}</h4>
+                        <h4>HRA: {hra}</h4>
+                        <h4>fA: {fa}</h4>
+                        <h4>Investment: {inv}</h4>
+                        <h4>Rent: {rent}</h4>
+                        <h4>City: {city}</h4>
+                        <h4>Mediclaim: {med}</h4>
+                        <h3>Tax Inc: {taxInc}</h3>
+                        </Modal>}
 				</div>
 			)}
 		</div>
