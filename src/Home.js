@@ -77,7 +77,7 @@ const Home = () => {
                     );
 			}
             console.log(appHra)
-			setTaxInc((eval(bas) + eval(lta) + eval(hra) + eval(fa)) - eval(appHra) - eval(inv) - eval(med));
+			setTaxInc(((eval(bas) + eval(lta) + eval(hra) + eval(fa)) - eval(appHra) - eval(inv) - eval(med)).toFixed(2));
 			setModal(true);
 		}
 	};
@@ -200,6 +200,7 @@ const Home = () => {
 					</button>
 					{modal && (
 						<Modal trigger={modal} setModal={setModal}>
+                            <h2 style={{textAlign:"center"}}>Description</h2>
 							<h4>Basic: {bas}</h4>
 							<h4>LTA: {lta}</h4>
 							<h4>HRA: {hra}</h4>
@@ -208,7 +209,7 @@ const Home = () => {
 							<h4>Rent: {rent}</h4>
 							<h4>City: {city}</h4>
 							<h4>Mediclaim: {med}</h4>
-							<h3>Tax Inc: {taxInc}</h3>
+							<h3 style={{textAlign:"center"}}>Tax Inc: {taxInc}</h3>
 						</Modal>
 					)}
 				</div>
