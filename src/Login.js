@@ -80,6 +80,7 @@ const Login = ({at}) => {
 
 	return (
 		<div className="loginPage">
+			<h1 style={{fontSize:"3vw",color:"white"}}>Welcome to Income Tax Official Page</h1>
 			<div className="login">
 				<i className="fa-solid fa-user fa-8x"></i>
 				<div className="">
