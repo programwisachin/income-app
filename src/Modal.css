@@ -18,6 +18,7 @@
     width: 100%;
     max-width: 640px;
     background-color: #fff;
+    animation: pop 0.3s ease-in 1 forwards ;
 }
 
 .modal button{
@@ -34,4 +35,15 @@
 
 .modal button:hover{
     cursor: pointer;
+}
+
+@keyframes pop {
+    from{
+        transform: scale(0);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
 }

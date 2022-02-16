@@ -19,6 +19,7 @@
     height: 61vh;
     width: 32vw;
     background-color: #a2a8d3;
+    animation: fade 0.8s ease-in 1 forwards;
 }
 .btnGroup{
     width: 100%;
@@ -35,6 +36,11 @@
     height: 61vh;
     width: 32vw;
     background-color: #a2a8d3;
+    animation: fade 0.8s ease-in 1 forwards;
+}
+
+.home > h1,.home >h3{
+    animation: fade 0.8s ease-in 1 forwards;
 }
 .innerFormField{
 	position:relative;
@@ -138,3 +144,11 @@
     color: #113f67;
   }
 
+@keyframes fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

@@ -17,6 +17,11 @@
     height: 71vh;
     width: 32vw;
     background-color: #a2a8d3;
+    animation: fade 0.8s ease-in 1 forwards;
+}
+
+.loginPage > h1{
+    animation: fade 0.8s ease-in 1 forwards;
 }
 
 .login > i {
@@ -79,4 +84,14 @@
     color: #113f67;
     background-color: transparent;
     border: 1px solid #113f67;
+}
+
+
+@keyframes fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
