@@ -69,14 +69,15 @@ const Home = () => {
 			console.log(secondFormcredentials);
 			if (city === "metro") {
 				setAppHra(
-					Math.min(bas * (50 / 100), rent - bas * (10 / 100), hra)
+					Math.min((bas * (50 / 100)), (rent - bas * (10 / 100)), hra)
 				);
 			} else {
 				setAppHra(
-					Math.min(bas * (40 / 100), rent - bas * (10 / 100), hra)
-				);
+					Math.min((bas * (40 / 100)), (rent - bas * (10 / 100)), hra)
+                    );
 			}
-			setTaxInc(bas + lta + hra + fa - appHra - inv - med);
+            console.log(appHra)
+			setTaxInc((eval(bas) + eval(lta) + eval(hra) + eval(fa)) - eval(appHra) - eval(inv) - eval(med));
 			setModal(true);
 		}
 	};
