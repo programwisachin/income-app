@@ -1,6 +1,9 @@
 # Income Tax App
-
+![preview](login-preview.png)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Installation
+`npm i` to install dependencies and  `cd ./backend npm i`  to install backend dependencies
 
 ## Available Scripts
 
